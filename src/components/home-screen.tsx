@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const HomeScreen = () => {
   const [time, setTime] = useState({
@@ -33,7 +33,6 @@ const HomeScreen = () => {
       justifyContent="flex-end"
       pr={32}
       className="home-screen"
-
       pt={20}
       alignItems={"flex-start"}
     >

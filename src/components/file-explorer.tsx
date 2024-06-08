@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -16,11 +16,14 @@ import PinIcon from "../assets/pin.png";
 import TextIcon from "../assets/text.png";
 import CustomModalHeader from "./custom-modal-header";
 import { SearchIcon } from "@chakra-ui/icons";
-import Notepad from "./notepad";
-import { aboutText, ACTIONS } from "../constants";
-import ReactDOM from "react-dom";
 
-const FileExplorer = ({ closeModal, handleAboutText }: { closeModal: () => void; handleAboutText: () => void }) => {
+const FileExplorer = ({
+  closeModal,
+  handleAboutText
+}: {
+  closeModal: () => void;
+  handleAboutText: () => void;
+}) => {
   const [modalSize, setModalSize] = useState("xl");
   const isModalFullScreen = modalSize === "full";
 
@@ -108,8 +111,7 @@ const FileExplorer = ({ closeModal, handleAboutText }: { closeModal: () => void;
                   cursor="pointer"
                   onClick={() => {
                     handleAboutText();
-                  }
-                  }
+                  }}
                 >
                   <img
                     src={TextIcon}
@@ -129,7 +131,6 @@ const FileExplorer = ({ closeModal, handleAboutText }: { closeModal: () => void;
           </Flex>
         </ModalBody>
       </ModalContent>
-   
     </Modal>
   );
 };

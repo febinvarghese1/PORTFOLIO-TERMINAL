@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Menu,
   MenuButton,
@@ -12,7 +11,11 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { HEADER_LIST, SOCIAL_LIST } from "../constants";
 import Pic from "../assets/pic.jpg";
 
-const Header = ({  handleSidebarAction }: { handleSidebarAction: (action: string) => void  }) => {
+const Header = ({
+  handleSidebarAction
+}: {
+  handleSidebarAction: (action: string) => void;
+}) => {
   const currentDate = new Date();
 
   return (
@@ -50,9 +53,8 @@ const Header = ({  handleSidebarAction }: { handleSidebarAction: (action: string
           mt={3}
           borderRadius={3}
         >
-          {
-            HEADER_LIST.map(header => (
-              <MenuItem
+          {HEADER_LIST.map((header) => (
+            <MenuItem
               key={header.id}
               color="black"
               padding={2}
@@ -67,18 +69,16 @@ const Header = ({  handleSidebarAction }: { handleSidebarAction: (action: string
                 background: "gray.200"
               }}
             >
-             {header.text}
+              {header.text}
             </MenuItem>
-            ))
-          }
-         
+          ))}
         </MenuList>
       </Menu>
 
       <Text fontSize="sm">{currentDate.toDateString()}</Text>
       <Menu>
         <MenuButton>
-        <Avatar size="sm" name='Febin Varghese' src={Pic} />
+          <Avatar size="sm" name="Febin Varghese" src={Pic} />
         </MenuButton>
         <MenuList
           paddingBlock={1}
@@ -88,9 +88,8 @@ const Header = ({  handleSidebarAction }: { handleSidebarAction: (action: string
           mt={3}
           borderRadius={3}
         >
-          {
-            SOCIAL_LIST.map(header => (
-              <MenuItem
+          {SOCIAL_LIST.map((header) => (
+            <MenuItem
               key={header.id}
               color="black"
               padding={2}
@@ -105,14 +104,11 @@ const Header = ({  handleSidebarAction }: { handleSidebarAction: (action: string
                 background: "gray.200"
               }}
             >
-             {header.text}
+              {header.text}
             </MenuItem>
-            ))
-          }
-         
+          ))}
         </MenuList>
-        </Menu>
-        
+      </Menu>
     </div>
   );
 };

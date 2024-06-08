@@ -1,6 +1,5 @@
-import React from "react";
 import { ModalHeader, Flex, Text } from "@chakra-ui/react";
-import { ArrowUpDownIcon, CloseIcon } from "@chakra-ui/icons";
+import { CloseIcon } from "@chakra-ui/icons";
 import FullScreen from "../assets/fullscreen.png";
 
 const CustomModalHeader = ({
@@ -37,7 +36,10 @@ const CustomModalHeader = ({
             cursor="pointer"
             onClick={onFullScreen}
           >
-            <img src={FullScreen} style={{width: "12px", height: "12px", objectFit: "contain"}} />
+            <img
+              src={FullScreen}
+              style={{ width: "12px", height: "12px", objectFit: "contain" }}
+            />
           </Flex>
           <Flex
             alignItems="center"

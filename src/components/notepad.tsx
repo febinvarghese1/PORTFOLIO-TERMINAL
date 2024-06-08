@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Modal,
   ModalOverlay,
   ModalBody,
   ModalContent,
-  Textarea,
   Input
 } from "@chakra-ui/react";
 import CustomModalHeader from "./custom-modal-header";
@@ -24,7 +23,6 @@ const Notepad = ({
     • Navigate to Terminal for the full experience of this portfolio
     • Write down your ideas perhaps???`
   );
-
 
   return (
     <Modal
@@ -52,7 +50,7 @@ const Notepad = ({
         />
         <ModalBody p={6}>
           <Input
-          as="textarea"
+            as="textarea"
             border={0}
             outline={0}
             boxShadow={"none"}
