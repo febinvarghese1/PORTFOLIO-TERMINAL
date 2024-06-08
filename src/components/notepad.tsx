@@ -19,9 +19,9 @@ const Notepad = ({
   const isModalFullScreen = modalSize === "full";
   const [inputTextValue, setInputTextValue] = useState(
     text ??
-      `Welcome to the notepad
-    • Navigate to Terminal for the full experience of this portfolio
-    • Write down your ideas perhaps???`
+      `Welcome to the notepad:
+•  For the complete portfolio experience, head over to the Terminal.
+•  Feel free to jot down your ideas, if you'd like.`
   );
 
   return (

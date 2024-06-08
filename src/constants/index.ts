@@ -54,34 +54,39 @@ _______________   ____
 *******************************************************************************************
 </pre>
 <br />                                                                                            
-<span id="terminal"> Welcome to my interactive Terminal, type <strong>help</strong>
-to display all the available commands.
+<span id="terminal"> Welcome to my interactive Terminal. Type <strong>help</strong> to view all available commands.
 </span>
 `,
   HELP: `
 <br />
 
 <pre id="terminal">
-help: 
-colors            -          changes the color of the terminal EX: type red
-available colors:
-    red
-    blue
-    green
-    yellow 
-about            -          Gives a brief info about the current user
-timeline         -          timeline or experience of the current user
-stats            -          show the stats of the current user
-projects         -          displays the projects of the current user
-socials          -          social information of the current user EX: type github 
-commands:
-    github
-    linkedln
-clear            -          commands clears the terminal
+colors: Change the color scheme of the terminal. For example, type "red".
+Available colors:
+    - Red
+    - Blue
+    - Green
+    - Yellow
+
+about: Provides a brief overview of the current user.
+
+timeline: Displays the timeline or work experience of the current user.
+
+Stats: Shows statistics related to the current user.
+
+projects: Lists the projects associated with the current user.
+
+socials: Provides social media information for the current user. For instance, <br/> type "github" to display GitHub information.
+Available commands:
+    - GitHub
+    - LinkedIn
+
+clear: Clears the terminal screen.
+
 </pre>
 `,
 
-  FALLBACK: `<br /><span id="terminal">Unknown command(s) please use the avaiable commands to check it out type <strong>help</strong></span> <br/>`,
+  FALLBACK: `<br /><span id="terminal">Unknown command(s). Please utilize the available commands to explore further. Type <strong>help</strong> for assistance</span> <br/>`,
   ABOUT: `
 <br/>
 

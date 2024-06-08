@@ -34,8 +34,8 @@ body {
 }
 
 .home_left-bar--icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: contain;
   cursor: pointer;
 }
@@ -53,8 +53,8 @@ body {
 }
 
 #terminal strong {
-  color: lightblue;
-  text-shadow: 1px 1px 2px black, 1px 1px 1px lightblue;
+  color: rgb(167, 233, 255);;
+  text-shadow: 1px 1px 2px black, 1px 1px 1px rgb(167, 233, 255);
 }
 
 

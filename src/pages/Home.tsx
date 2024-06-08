@@ -89,7 +89,7 @@ const Home = ({
             isAboutPage
               ? `${aboutText}` +
                 "\n" +
-                "• Navigate to Terminal for the full experience of this portfolio"
+                "• For the complete portfolio experience, head over to the Terminal"
               : undefined
           }
           closeModal={() => {
