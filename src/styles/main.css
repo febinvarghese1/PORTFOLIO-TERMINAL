@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --font-primary: "Ubuntu";
+  --font-secondary: "Trispace";
+}
+
+body {
+  background: #135d8a;
+  font-family: var(--font-primary);
+}
+
+.header {
+  padding: 8px 20px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h5 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.home {
+  height: calc(100vh - 37px);
+}
+
+.home_left-bar--icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.terminal {
+  font-family: var(--font-secondary);
+}
+#terminal input {
+  caret-color: transparent;
+}
+#terminal {
+  width: 100%;
+  text-wrap: pretty;
+  word-break: break-all;
+}
+
+#terminal strong {
+  color: lightblue;
+  text-shadow: 1px 1px 2px black, 1px 1px 1px lightblue;
+}
+
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+@media screen and (max-width: 800px){
+  .home-screen {
+    display: none !important;
+  }
+}
