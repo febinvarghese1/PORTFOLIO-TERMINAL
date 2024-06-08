@@ -52,7 +52,7 @@ const FileExplorer = ({
           }}
         />
         <ModalBody p={0}>
-          <Flex height={600}>
+          <Flex h={isModalFullScreen ? "calc(100vh - 37px - 48px)" : 600}>
             <Box
               borderRight="1px"
               borderColor="gray.400"
