@@ -120,7 +120,6 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
     >
       <ModalOverlay />
       <ModalContent
-        marginInline={isModalFullScreen ? 0 : 5}
         maxW={isModalFullScreen ? "100vw" : 1000}
         w="100%"
         p={0}
