@@ -208,7 +208,7 @@ const TerminalInput = ({
   currentIndex: number;
   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
 }) => {
-  const [inputTextValue, setInputTextValue] = useState("");
+  const [inputTextValue, setInputTextValue] = useState<string | undefined>("");
 
   const handleTerminalControls = (key: string) => {
     
@@ -245,7 +245,7 @@ const TerminalInput = ({
         autoFocus
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            handleTerminalInput(inputTextValue);
+            handleTerminalInput(inputTextValue ?? '');
             setInputTextValue("");
           } else if (e.key === "ArrowUp" || e.key === "ArrowDown") {
             handleTerminalControls(e.key);
