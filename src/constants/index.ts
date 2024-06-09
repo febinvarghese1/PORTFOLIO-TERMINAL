@@ -100,6 +100,8 @@ clear: Clears the terminal screen.
 
 <pre id="terminal">
 
+*********************************************************************
+
 _______________   ____
 \_   _____/\   \ /   /
  |    __)   \   Y   / 
@@ -107,6 +109,7 @@ _______________   ____
  \___  /      \___/   
      \/               
 
+*********************************************************************
 </pre>
 
 <pre id="terminal" style="width: 100%; word-break: break-all; text-wrap: pretty">${aboutText}</pre>
@@ -166,6 +169,7 @@ _______________   ____
   `,
   PROJECTS: `
   <span>----- Projects -----</span>
+  <br/>
 <div id="terminal">
 <div id="projects">
 <strong>Fitness Blog Application</strong>
@@ -180,9 +184,9 @@ _______________   ____
 </div>
 <br/>
 <div id="projects">
-<strong>Google Search Clone</strong>
-<span>Google search clone done using react js , tailwind css, and rapid api to fetch data , this application is a clone of the google search engine which fetch data using api</span>
-<a style="text-decoration: underline" href="https://github.com/febinvarghese1/Google-Search-Clone" target="_blank">Github</a>
+<strong>Portfolio</strong>
+<span>Personal portfolio done using Next js, tailwind css, redux</span>
+<a style="text-decoration: underline" href="https://febin-varghese.vercel.app/" target="_blank">live</a>
 </div>
 <br/>
 <div id="projects">

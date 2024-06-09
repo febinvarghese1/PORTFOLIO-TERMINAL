@@ -87,11 +87,11 @@ const Settings = ({ closeModal, wallpaper, setCurrentWallpaper }: { closeModal: 
                 />
               </Flex>
               <Flex
-                mt={6}
+                mt={16}
                 justifyContent="center"
                 paddingInline={10}
                 pb={10}
-                gap={6}
+                gap={10}
                 flexWrap="wrap"
               >
                 {WALLPAPER.map((wallpaper) => (
@@ -104,6 +104,7 @@ const Settings = ({ closeModal, wallpaper, setCurrentWallpaper }: { closeModal: 
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover"
                     }}
+                    borderRadius={10}
                     maxW={250}
                     w="100%"
                     h={180}
