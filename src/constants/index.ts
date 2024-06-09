@@ -80,7 +80,7 @@ about: Provides a brief overview of the current user.
 
 timeline: Displays the timeline or work experience of the current user.
 
-Stats: Shows statistics related to the current user.
+stats: Shows statistics related to the current user.
 
 projects: Lists the projects associated with the current user.
 

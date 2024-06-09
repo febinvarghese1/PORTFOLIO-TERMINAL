@@ -18,11 +18,12 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
   const [modalSize, setModalSize] = useState("xl");
   const isModalFullScreen = modalSize === "full";
   const [terminalColor, setTerminalColor] = useState("green");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const inputRef = useRef<any>(null);
   const containerRef = useRef<any>(null);
   const [terminalResult, setTerminalResult] = useState<
-    Array<{ id: number; htmlCode: string }>
+    Array<{ id: number; htmlCode: string; command?:string }>
   >([
     {
       id: 1,
@@ -32,6 +33,7 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
 
   const handleTerminalInput = (inputTextValue: string) => {
     let htmlCode;
+    let isFallback = false;
     switch (inputTextValue.toLowerCase()) {
       case "help":
         htmlCode = TERMINAL.HELP;
@@ -60,7 +62,10 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
         window.open("https://github.com/febinvarghese1", "_blank");
         break;
       case "linkedln":
-        window.open("https://www.linkedin.com/in/febin-varghese-0530191b8", "_blank");
+        window.open(
+          "https://www.linkedin.com/in/febin-varghese-0530191b8",
+          "_blank"
+        );
         break;
       case "red":
         setTerminalColor("red");
@@ -76,17 +81,20 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
         break;
       default:
         htmlCode = TERMINAL.FALLBACK;
+        isFallback = true;
         break;
     }
     if (!!htmlCode) {
-      const result = [
-        ...terminalResult,
-        {
-          id: terminalResult[terminalResult.length - 1].id + 1,
-          htmlCode
-        }
-      ];
+      const obj: { id: number; htmlCode: string; command?: string } = {
+        id: terminalResult[terminalResult.length - 1].id + 1,
+        htmlCode,
+        command: inputTextValue
+      };
+      if (isFallback) delete obj?.command;
+      const result = [...terminalResult, { ...obj }];
+
       setTerminalResult(result);
+      setCurrentIndex(result.length);
     }
   };
 
@@ -173,6 +181,9 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
                   <TerminalInput
                     handleTerminalInput={handleTerminalInput}
                     inputRef={inputRef}
+                    terminalResult={terminalResult}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
                   />
                 </Box>
               </Box>
@@ -186,12 +197,40 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
 
 const TerminalInput = ({
   handleTerminalInput,
-  inputRef
+  inputRef,
+  terminalResult,
+  currentIndex,
+  setCurrentIndex
 }: {
   handleTerminalInput: (inputTextValue: string) => void;
   inputRef: React.MutableRefObject<null>;
+  terminalResult: Array<{ id: number; htmlCode: string; command?:string }>;
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
 }) => {
   const [inputTextValue, setInputTextValue] = useState("");
+
+  const handleTerminalControls = (key: string) => {
+    
+    if (terminalResult.length) {
+      if (key === "ArrowUp") {
+        const index = currentIndex > 0 ? currentIndex - 1 : 0;
+        if (terminalResult[index].id !== 1 && terminalResult[index]?.command) {
+          setInputTextValue(terminalResult[index]?.command);
+
+        }
+        setCurrentIndex(index);
+      } else {
+        const index = currentIndex <= terminalResult.length - 1 ? currentIndex + 1 : terminalResult.length - 1;
+        if (terminalResult[index]?.id !== 1 && terminalResult[index]?.command) {
+          setInputTextValue(terminalResult[index]?.command);
+        }
+        setCurrentIndex(index);
+      }
+    }
+  };
+
+
   return (
     <Flex gap={2} alignItems="center">
       <Text fontSize={["sm", "md", "lg"]} fontWeight="medium">
@@ -208,6 +247,8 @@ const TerminalInput = ({
           if (e.key === "Enter") {
             handleTerminalInput(inputTextValue);
             setInputTextValue("");
+          } else if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+            handleTerminalControls(e.key);
           }
         }}
         boxShadow={"none"}

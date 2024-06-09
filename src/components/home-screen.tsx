@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import React from "react";
 import { useEffect, useState } from "react";
 
 const HomeScreen = () => {
@@ -22,7 +23,7 @@ const HomeScreen = () => {
         hours: date.getHours(),
         seconds: date.getSeconds()
       });
-    }, 1000);
+    }, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -52,10 +53,7 @@ const HomeScreen = () => {
           :
         </Text>
         <Text fontSize="9xl">{convertToTwoDigit(time.minutes)}</Text>
-        <Text fontSize="9xl" marginInline={2}>
-          :
-        </Text>
-        <Text fontSize="9xl">{convertToTwoDigit(time.seconds)}</Text>
+    
         <Text pl={2} fontSize="3xl" color="gray.400">
           {time.hours >= 12 ? " PM" : " AM"}
         </Text>
@@ -64,4 +62,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default React.memo(HomeScreen);
