@@ -194,7 +194,7 @@ const TerminalInput = ({
   const [inputTextValue, setInputTextValue] = useState("");
   return (
     <Flex gap={2} alignItems="center">
-      <Text fontSize="lg" fontWeight="medium">
+      <Text fontSize={["sm", "md", "lg"]} fontWeight="medium">
         ninja@~portfolio:{" "}
       </Text>
       <Input

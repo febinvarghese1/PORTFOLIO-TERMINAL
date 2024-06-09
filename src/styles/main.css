@@ -11,8 +11,10 @@
 }
 
 body {
-  background: #135d8a;
   font-family: var(--font-primary);
+}
+.container {
+  background: rgba(255,255,255,0.3);
 }
 
 .header {
@@ -49,7 +51,7 @@ body {
 #terminal {
   width: 100%;
   text-wrap: pretty;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 #terminal strong {
@@ -68,5 +70,13 @@ body {
 @media screen and (max-width: 800px){
   .home-screen {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .terminal #terminal {
+    font-size: 13px !important;
+    text-wrap: balance;
+    word-break: break-word !important;
   }
 }

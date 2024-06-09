@@ -1,11 +1,13 @@
 import FileExplorer from "../assets/file-explorer.png";
 import Notepad from "../assets/notepad.png";
 import Terminal from "../assets/terminal.png";
+import Settings from "../assets/settings.png";
 
 export const ACTIONS = {
   OPEN_FOLDER: "OPEN_FOLDER",
   OPEN_NOTEPAD: "OPEN_NOTEPAD",
-  OPEN_TERMINAL: "OPEN_TERMINAL"
+  OPEN_TERMINAL: "OPEN_TERMINAL",
+  OPEN_SETTINGS: "OPEN_SETTINGS"
 };
 
 export const homeLeftSidebar = [
@@ -26,6 +28,12 @@ export const homeLeftSidebar = [
     icon: Terminal,
     action: ACTIONS.OPEN_TERMINAL,
     text: "Terminal"
+  },
+  {
+    id: 4,
+    icon: Settings,
+    action: ACTIONS.OPEN_SETTINGS,
+    text: "Settings"
   }
 ];
 
@@ -217,5 +225,38 @@ export const HEADER_LIST  = [
     id: 3,
     text: 'Notepad',
     action: ACTIONS.OPEN_NOTEPAD
+  },
+  {
+    id: 4,
+    text: 'Settings',
+    action: ACTIONS.OPEN_SETTINGS
+  }
+]
+
+
+export const WALLPAPER = [
+  {
+    id: 1,
+    link: "https://images.unsplash.com/photo-1485470733090-0aae1788d5af?q=80&w=2434&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 2,
+    link: "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 3,
+    link: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 4,
+    link: "https://images.unsplash.com/photo-1562176566-e9afd27531d4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 5,
+    link: "https://images.unsplash.com/photo-1583156340160-7867f31285d5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 6,
+    link: "https://images.unsplash.com/photo-1557264322-b44d383a2906?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]

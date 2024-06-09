@@ -57,7 +57,9 @@ const FileExplorer = ({
               borderRight="1px"
               borderColor="gray.400"
               paddingBlock={5}
-              w={200}
+              maxW={180}
+              display={["none", "block"]}
+              w="100%"
             >
               <Flex
                 alignItems="center"

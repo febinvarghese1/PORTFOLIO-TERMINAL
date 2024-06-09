@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { DragHandleIcon } from "@chakra-ui/icons";
-import { aboutText, ACTIONS, homeLeftSidebar } from "../constants";
+import { aboutText, ACTIONS, homeLeftSidebar, WALLPAPER } from "../constants";
 import { Box, Flex, Tooltip } from "@chakra-ui/react";
 import Notepad from "../components/notepad";
 import FileExplorer from "../components/file-explorer";
 import Terminal from "../components/terminal";
-import background from "../assets/background.jpg";
 import HomeScreen from "../components/home-screen";
+import Settings from "../components/settings";
 
 const Home = ({
   showCurrentModal,
@@ -18,12 +18,14 @@ const Home = ({
   handleSidebarAction: (action: string) => void;
 }) => {
   const [isAboutPage, setIsAboutPage] = useState(false);
-
+  const background_id = localStorage.getItem("portfolio_wallpaper_id");
+  const [wallpaper, setWallpaper] = useState(
+    WALLPAPER.find((wallpaper) => `${wallpaper.id}` === background_id)?.link ?? WALLPAPER[0].link
+  );
   const handleAboutText = () => {
     handleSidebarAction(ACTIONS.OPEN_NOTEPAD);
     setIsAboutPage(true);
   };
-
   return (
     <Box h="calc(100vh - 48px)">
       <Flex
@@ -31,13 +33,15 @@ const Home = ({
         pt={5}
         pb={5}
         h="100%"
+        transition={"background .5s ease"}
         style={{
-          background: `url(${background})`,
-          backgroundPosition: "center center"
+          backgroundImage: `url(${wallpaper})`,
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
         }}
         w={"100%"}
         backgroundRepeat="no-repeat"
-        backgroundSize="cover"
       >
         <Flex
           flexDirection="column"
@@ -106,6 +110,9 @@ const Home = ({
       )}
       {showCurrentModal === ACTIONS.OPEN_TERMINAL && (
         <Terminal closeModal={closeModal} />
+      )}
+      {showCurrentModal === ACTIONS.OPEN_SETTINGS && (
+        <Settings wallpaper={wallpaper} setCurrentWallpaper={(wallpaper: string) => setWallpaper(wallpaper)} closeModal={closeModal} />
       )}
     </Box>
   );
