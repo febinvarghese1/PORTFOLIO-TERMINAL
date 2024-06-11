@@ -71,10 +71,10 @@ _______________   ____
 <pre id="terminal">
 colors: Change the color scheme of the terminal. For example, type "red".
 Available colors:
-    - Red
-    - Blue
-    - Green
-    - Yellow
+    - red
+    - blue
+    - green
+    - yellow
 
 about: Provides a brief overview of the current user.
 
@@ -86,8 +86,8 @@ projects: Lists the projects associated with the current user.
 
 socials: Provides social media information for the current user. For instance, <br/> type "github" to display GitHub information.
 Available commands:
-    - GitHub
-    - LinkedIn
+    - gitHub
+    - linkedin
 
 clear: Clears the terminal screen.
 

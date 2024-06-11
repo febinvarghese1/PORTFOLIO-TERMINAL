@@ -61,7 +61,7 @@ const Terminal = ({ closeModal }: { closeModal: () => void }) => {
       case "github":
         window.open("https://github.com/febinvarghese1", "_blank");
         break;
-      case "linkedln":
+      case "linkedin":
         window.open(
           "https://www.linkedin.com/in/febin-varghese-0530191b8",
           "_blank"
@@ -234,7 +234,7 @@ const TerminalInput = ({
   return (
     <Flex gap={2} alignItems="center">
       <Text fontSize={["sm", "md", "lg"]} fontWeight="medium">
-        ninja@~portfolio:{" "}
+        root@~portfolio:{" "}
       </Text>
       <Input
         value={inputTextValue}
